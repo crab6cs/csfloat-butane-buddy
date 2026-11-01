@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "CSFloat Butane Buddy Preview",
+  "version": "1.0.0",
+  "description": "Show actual Butane Buddy inspect screenshots in CSFloat listing cards. Toggle instantly from the popup.",
+  "permissions": ["storage"],
+  "action": {"default_popup": "popup.html", "default_title": "Butane Buddy previews"},
+  "content_scripts": [
+    {"matches": ["https://csfloat.com/*"], "js": ["bridge.js"], "run_at": "document_start", "world": "MAIN"},
+    {"matches": ["https://csfloat.com/*"], "js": ["content.js"], "run_at": "document_start"}
+  ]
+}
